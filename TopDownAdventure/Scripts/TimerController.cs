@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TimerController : MonoBehaviour
 {
-    public GameObject eleman0;
     public GameObject eleman1;
     public GameObject eleman2;
     public GameObject eleman3;
+    public GameObject eleman4;
+    
 
     private int aktifEleman = -1;
     private float sonrakiAktifZaman = 0f;
@@ -29,7 +30,7 @@ public class TimerController : MonoBehaviour
         if (Time.time >= sonrakiAktifZaman)
         {
 
-            if (pLive.health < 150)
+            if (pLive.health < 150 && Time.time <= 150.0f)
             {
                 if(pLive.health+40<150)
                 {
@@ -44,24 +45,24 @@ public class TimerController : MonoBehaviour
 
             if (aktifEleman == -1)
             {
-                eleman0.SetActive(true);
+                eleman1.SetActive(true);
                 aktifEleman = 0;
                 sonrakiAktifZaman = Time.time + 45f; 
             }else if (aktifEleman == 0)
             {
-                eleman1.SetActive(true);
+                eleman2.SetActive(true);
                 aktifEleman = 1;
                 sonrakiAktifZaman = Time.time + 45f; 
             }
             else if (aktifEleman == 1)
             {
-                eleman2.SetActive(true);
+                eleman3.SetActive(true);
                 aktifEleman = 2;
                 sonrakiAktifZaman = Time.time + 45f; 
             }
             else if (aktifEleman == 2)
             {
-                eleman3.SetActive(true);
+                eleman4.SetActive(true);
                 aktifEleman = 3;
             }
         }

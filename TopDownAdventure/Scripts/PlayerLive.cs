@@ -11,12 +11,15 @@ public class PlayerLive : MonoBehaviour
     void Start()
     {
         hTextCont= GetComponent<HealthTextController>();
-        UpdateHealthText(health);
     }
 
     void Update()
     {
-        
+
+        Vector3 currentRotation = transform.eulerAngles;
+        currentRotation.z = 0f;
+        transform.eulerAngles = currentRotation;
+
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -26,19 +29,13 @@ public class PlayerLive : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
-        UpdateHealthText(health);
     }
 
     public void TakeHeal(float amount)
     {
         health += amount;
-        UpdateHealthText(health);
     }
 
-    private void UpdateHealthText(float healthNew)
-    {
-        
-    }
 
     
 }

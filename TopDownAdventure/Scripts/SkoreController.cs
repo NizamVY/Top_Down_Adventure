@@ -14,6 +14,8 @@ public class SkoreController : MonoBehaviour
     {
         pLive=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLive>();
         InvokeRepeating("UpdateValue", 1f, 1f); // Her saniye UpdateValue metodunu çaðýr
+
+        valueText.text = "Macera baþlýyor! " + "\n" + " Hazýr Ol ";
     }
 
     private void UpdateValue()
@@ -25,7 +27,7 @@ public class SkoreController : MonoBehaviour
         }
         if(value > 75)
         {
-            valueText.text = (value-75).ToString(); // Deðeri TextMeshPro elemanýna yaz
+            valueText.text = "Score:" +(value-75).ToString(); // Deðeri TextMeshPro elemanýna yaz
         }
         
     }

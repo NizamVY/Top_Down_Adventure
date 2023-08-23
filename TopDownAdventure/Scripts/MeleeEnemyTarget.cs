@@ -38,13 +38,13 @@ public class MeleeEnemyTarget : MonoBehaviour
         {
             float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-            if (distanceToTarget <= 2f && !isAttacking)
+            if (distanceToTarget <= 5f && !isAttacking)
             {
                 animator.enabled = true;
                 isAttacking = true;
                 animator.SetTrigger("Attack");
             }
-            else if (distanceToTarget > 2f && distanceToTarget <= 10f && isAttacking && distanceToTarget > 2f)
+            else if (distanceToTarget > 5f && distanceToTarget <= 10f && isAttacking && distanceToTarget > 5f)
             {
                 animator.enabled = false;
                 isAttacking = false;

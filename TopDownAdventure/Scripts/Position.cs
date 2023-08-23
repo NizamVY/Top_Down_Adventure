@@ -13,6 +13,8 @@ public class Position : MonoBehaviour
     {
         pLive=GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLive>();
         StartCoroutine(DestroyAfterDelay(8f));
+
+        gameObject.transform.localScale = new Vector3(2,2,1);
     }
 
     // Update is called once per frame
@@ -41,5 +43,12 @@ public class Position : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
+    }
+
+    public void Buff()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        Vector3 newScale = currentScale * 1.5f;
+        gameObject.transform.localScale = newScale;
     }
 }

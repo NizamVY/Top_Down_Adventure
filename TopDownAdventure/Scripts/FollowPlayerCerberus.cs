@@ -15,7 +15,7 @@ public class FollowPlayerCerberus : MonoBehaviour
     private PlayerLive pLive;
 
     public GameObject alevPrefab;
-    public float atisHizi = 10f;
+    public float atisHizi;
     private bool atisHazir = true;
 
 
@@ -25,6 +25,8 @@ public class FollowPlayerCerberus : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         circleCollider = GetComponent<CircleCollider2D>();
+
+        atisHizi = 10f;
     }
 
 
@@ -82,5 +84,10 @@ public class FollowPlayerCerberus : MonoBehaviour
     void ResetAtisHazir()
     {
         atisHazir = true;
+    }
+
+    public void Buff()
+    {
+        atisHizi *= 1.5f;
     }
 }

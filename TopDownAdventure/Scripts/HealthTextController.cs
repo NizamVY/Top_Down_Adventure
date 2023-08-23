@@ -17,6 +17,6 @@ public class HealthTextController : MonoBehaviour
 
     void Update()
     {
-        value.text=pLive.health.ToString();
+        value.text=((int)pLive.health).ToString();
     }
 }

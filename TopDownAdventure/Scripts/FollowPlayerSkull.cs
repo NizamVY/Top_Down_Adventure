@@ -12,7 +12,7 @@ public class FollowPlayerSkull : MonoBehaviour
     public float speed = 2.75f;
     public float lockDuration = 1f;
     public float followDistance = 32.0f;
-    public float forwardSpeed = 20f;
+    public float forwardSpeed;
     public Transform attackPoint;
 
     private Transform player;
@@ -39,6 +39,7 @@ public class FollowPlayerSkull : MonoBehaviour
         sprite= GetComponent<SpriteRenderer>();
         skLive=GetComponent<SkullLive>();
 
+        forwardSpeed = 35.0f;
     }
 
     void Update()
@@ -118,5 +119,10 @@ public class FollowPlayerSkull : MonoBehaviour
             }
             
         }
+    }
+
+    public void Buff()
+    {
+        forwardSpeed *= 1.4f;
     }
 }

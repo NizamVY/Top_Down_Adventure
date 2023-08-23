@@ -7,7 +7,7 @@ public class FollowPlayerMouse : MonoBehaviour
 {
     private Transform player;
     public Animator anim;
-    public float speed = 4.0f;
+    public float speed;
     public float followDistance = 10.0f;
     public float attackDistance = 1.5f;
     private SpriteRenderer sprite;
@@ -22,6 +22,8 @@ public class FollowPlayerMouse : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         circleCollider = GetComponent<CircleCollider2D>();
+
+        speed = 12.66f;
     }
 
 
@@ -52,14 +54,16 @@ public class FollowPlayerMouse : MonoBehaviour
             }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            pLive= collision.gameObject.GetComponent<PlayerLive>();
-            pLive.TakeDamage(30);
+            if (collision.gameObject.tag == "Player")
+            {
+                pLive= collision.gameObject.GetComponent<PlayerLive>();
+                pLive.TakeDamage(30);
+            }
         }
-    }
 
-    
+        public void Buff() {
+        speed *= 1.5f;
+        }
 }
