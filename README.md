@@ -24,6 +24,7 @@ Bu düşmanlar ve silahlar sırası ile şu şekildedir:
 2- Pistol hayalet gibi yaklaşmak istemeyeceğimiz düşmanları temizlemekte iyidir.
 3- Büyük kılıç slime gibi yaklaştırmak istemeyeceğimiz düşmanları temizlemekte iyidir.
 4- Minigun seri atışlarla özellikle birikmiş düşmanları temizlemekte iyidir.
+Silahlar kendileri hedef alıp düşmanlar belli bir mesafeye girdiğinde kendileri saldırılarını yaparlar.
 
 ### Düşmanlar
 1- Fare hızlı koşan ve bize 30 hasar veren bir enemydir.
